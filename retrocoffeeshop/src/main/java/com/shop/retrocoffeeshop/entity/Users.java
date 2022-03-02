@@ -23,6 +23,7 @@ public class Users {
 	private String firstName;
 	private String lastName;
 	private String mobile;
+	private int points;
 	
 	
 //	private List<Order> orders;
@@ -54,6 +55,14 @@ public class Users {
 	}
 	public void setMobile(String mobile) {
 		this.mobile = mobile;
+	}
+
+	public int getPoints() {
+		return points;
+	}
+
+	public void setPoints(int points) {
+		this.points = points;
 	}
 	
 //	public List<Order> getOrders() {
