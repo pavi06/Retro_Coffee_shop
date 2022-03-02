@@ -4,7 +4,6 @@ public class Items {
 	
 	int itemId;
 	String itemName;
-	int itemQuantity;
 	String itemImageURL;
 	String itemCategory;
 	double itemPrice;
@@ -24,12 +23,6 @@ public class Items {
 	}
 	public void setItemName(String itemName) {
 		this.itemName = itemName;
-	}
-	public int getItemQuantity() {
-		return itemQuantity;
-	}
-	public void setItemQuantity(int itemQuantity) {
-		this.itemQuantity = itemQuantity;
 	}
 	public String getItemImageURL() {
 		return itemImageURL;
