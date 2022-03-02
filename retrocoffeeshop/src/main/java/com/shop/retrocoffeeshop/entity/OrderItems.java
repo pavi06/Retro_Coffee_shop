@@ -5,13 +5,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="tbl_orderItems")
-
 public class OrderItems {
 	
 	@Id
@@ -20,11 +23,15 @@ public class OrderItems {
 	
 	int orderItemId;
 	int orderItemQuantity;
+	double price;
 	
 	@OneToOne
 	@JoinColumn(name="itemId")
 	Items item;
 
+	@ManyToOne
+	@JsonIgnore
+	@JoinColumn(name="orderId")
 	Order order;
 	
 	public int getOrderItemId() {
@@ -51,6 +58,12 @@ public class OrderItems {
 	}
 	public void setOrder(Order order) {
 		this.order = order;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
 	}
 	
 	
