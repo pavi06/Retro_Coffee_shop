@@ -11,37 +11,45 @@ import javax.persistence.Table;
 import java.util.List;
 
 @Entity
-@Table(name="tbl_users")
-public class Users {
+@Table(name="retro_customers")
+public class Customer {
 	
 	@Id
-	@SequenceGenerator(name="user_seq",initialValue=2000,allocationSize= 1 )
-	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="user_seq")
-	private int userId;
+	@SequenceGenerator(name="customer_seq",initialValue=2000,allocationSize= 1 )
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="customer_seq")
+	private int customerId;
 	private String name;
 	private String mobile;
 	private int points;
 	
 	@OneToMany
-	@JoinColumn(name="userId")
+	@JoinColumn(name="customerId")
 	private List<Order> orders;
 	
-	public Users() {
+	public Customer() {
 		super();
 	}
 	
-	public int getUserId() {
-		return userId;
+	
+	public int getCustomerId() {
+		return customerId;
 	}
-	public void setUserId(int userId) {
-		this.userId = userId;
+
+
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
 	}
-	public String getFirstName() {
+
+
+	public String getName() {
 		return name;
 	}
-	public void setFirstName(String name) {
+
+
+	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getMobile() {
 		return mobile;
 	}

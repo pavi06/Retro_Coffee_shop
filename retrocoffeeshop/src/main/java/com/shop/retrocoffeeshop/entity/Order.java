@@ -16,7 +16,7 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name="tbl_orders")
+@Table(name="retro_orders")
 
 public class Order implements Serializable{
 	
@@ -24,7 +24,7 @@ public class Order implements Serializable{
 	@SequenceGenerator(name="order_seq",initialValue = 1,allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "order_seq")
 	int orderId;
-	String date;
+	String orderDate;
 	double totalOrderAmount;
 	int itemCount;
 	double gst;
@@ -34,22 +34,22 @@ public class Order implements Serializable{
 	
 	@ManyToOne
 	@JsonIgnore
-	@JoinColumn(name="userId")
-	Users user;
+	@JoinColumn(name="customerId")
+	Customer customer;
 	
 	public Order() {
 		super();
 	}
 
-	public Order(int orderId,String date,int itemCount,double totalOrderAmount,double gst, Users user,
+	public Order(int orderId,String orderDate,int itemCount,double totalOrderAmount,double gst, Customer customer,
 			List<OrderItems> orderItems) {
 		super();
 		this.orderId = orderId;
-		this.date=date;
+		this.orderDate=orderDate;
 		this.itemCount=itemCount;
 		this.totalOrderAmount = totalOrderAmount;
 		this.gst=gst;
-		this.user = user;
+		this.customer = customer;
 		this.orderItems = orderItems;
 	}
 
@@ -70,21 +70,29 @@ public class Order implements Serializable{
 	public void setTotalOrderAmount(double totalOrderAmount) {
 		this.totalOrderAmount = totalOrderAmount;
 	}
-	
-	public Users getUser() {
-		return user;
+    
+	public Customer getCustomer() {
+		return customer;
 	}
 
-	public void setUser(Users user) {
-		this.user = user;
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 
-	public String getDate() {
-		return date;
+	public String getOrderDate() {
+		return orderDate;
 	}
 
-	public void setDate(String date) {
-		this.date = date;
+	public void setOrderDate(String orderDate) {
+		this.orderDate = orderDate;
+	}
+
+	public List<OrderItems> getOrderItems() {
+		return orderItems;
+	}
+
+	public void setOrderItems(List<OrderItems> orderItems) {
+		this.orderItems = orderItems;
 	}
 
 	public int getItemCount() {
