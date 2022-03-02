@@ -4,11 +4,10 @@ public class Items {
 	
 	int itemId;
 	String itemName;
-	String itemImageURL;
 	String itemCategory;
 	double itemPrice;
 	
-	public Items(int itemId, String itemName, int itemQuantity, String itemImageURL, String itemCategory, double itemPrice){
+	public Items(int itemId, String itemName, int itemQuantity,String itemCategory, double itemPrice){
 		
 	}
 	
@@ -23,12 +22,6 @@ public class Items {
 	}
 	public void setItemName(String itemName) {
 		this.itemName = itemName;
-	}
-	public String getItemImageURL() {
-		return itemImageURL;
-	}
-	public void setItemImageURL(String itemImageURL) {
-		this.itemImageURL = itemImageURL;
 	}
 	public String getItemCategory() {
 		return itemCategory;
