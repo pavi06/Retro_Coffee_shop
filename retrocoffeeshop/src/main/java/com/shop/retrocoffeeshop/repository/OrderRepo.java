@@ -1,8 +1,7 @@
 package com.shop.retrocoffeeshop.repository; 
 
 import java.util.List; 
-import com.onlineshopping.entity.Order;
-import com.onlineshopping.entity.User;
+import com.shop.retrocoffeeshop.entity.Order;
 
 public interface OrderRepo {
 	Order createOrder();

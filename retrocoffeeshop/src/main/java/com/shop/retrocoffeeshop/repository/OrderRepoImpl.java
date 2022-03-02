@@ -8,10 +8,10 @@ import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.shop.retrocoffeeshop.entity.Cart;
+
 import com.shop.retrocoffeeshop.entity.Order;
-import com.shop.retrocoffeeshop.entity.OrderStatus; 
-import com.shop.retrocoffeeshop.entity.User;
+
+
 
 @Repository
 public class OrderRepoImpl implements OrderRepo {
